@@ -22,3 +22,11 @@ print("************* adding a customer and printing again ***********")
 cat.AddCustomer("Hans", "Hansen", 40, "22334455", "abc@bbc.com")
 cat.ShowCustomer()
 
+#add a booking 
+#start week, end week,customer, hotel
+print("**********booking list content before Add********")
+cat.ShowBookings()
+
+print("**********booking list content after Add********")
+cat.AddBooking(5,7,cat.GetApartment(3),cat.GetCustomer(0))
+cat.ShowBookings()
