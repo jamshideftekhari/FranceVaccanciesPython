@@ -16,5 +16,5 @@ class Apartment (object):
     
     # to sting metod
     def __str__(self):
-        return str(self.Id)+" "+self.Name+" "+self.Address+" "+self.City+" "+self.Description+" "+str(self.RoomNumber)+" "+str(self.WeekPrice)              
+        return str(self.Id)+" "+self.Name+" "+self.Address+" "+self.City+" "+self.Description+" "+str(self.RoomNumber)+" "+str(self.Size)+ " " +str(self.WeekPrice)              
     
