@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/2b92ed4f-3036-4388-906c-b696a1cf969a/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/FvFlaskAppService",
+    "appService.deploySubpath": "."
+}

@@ -20,6 +20,7 @@ cat.ShowCustomer()
 # first name, last name, age , Address, phone, email 
 print("************* adding a customer and printing again ***********")
 cat.AddCustomer("Hans", "Hansen", 40, "22334455", "abc@bbc.com")
+
 cat.ShowCustomer()
 
 #add a booking 

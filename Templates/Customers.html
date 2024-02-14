@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SprintTR</title>
+    <style>
+       table, th, td {
+           border: 1px solid black;
+           }
+        table.center {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="align-self: center">France Vacancies customers</h1>
+
+<!-- <img src="images/averageDirection.png">
+<img src="{{url_for('static', filename = 'images/averageDirection.png')}}"> -->
+
+<table class="center">
+    <thead><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Age</th><th>Phone</th><th>Email</th></tr></thead>
+    <tbody>
+        {% for cust in customers%}
+           <tr>
+               <td>{{cust.Id}}</td>
+               <td style="text-align: center;">{{cust.FName}}</td>
+               <td style="text-align: center;">{{cust.LName}}</td>
+               <td style="text-align: center;">{{cust.Age}}</td>
+               <td style="text-align: center;">{{cust.PhoneNr}}</td>
+               <td style="text-align: center;">{{cust.Email}}</td>
+           </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<p style="align-self: center; background-color: rgb(235, 8, 8)"> <h2 style="align-self: center">Add Customer</h2>
+<form action="{{ '/AddCustomer' }}" method="post" style="text-align: center">
+    <label>First Name:</label>
+    <input type="text" id="fname" name="fname" value="">
+    <label>Last Name:</label>
+    <input type="text" id="lname" name="lname" value="">
+    <label>Age:</label>
+    <input type="text" id="age" name="age" value="">
+    <label>Phone number:</label>
+    <input type="text" id="phone" name="phone" value=""><br><br>
+    <label>Email:</label>
+    <input type="text" id="email" name="email" value="">
+   
+    <input type="submit" value="Add Customer">
+</form>
+<br><br>
+</p>
+<p style="text-align: center">  <h2 style="align-self: center">Remove Customer</h2>
+<form action="{{ '/RemoveApar' }}" method="post" style="text-align: center">
+        <label>Apartment ID:</label>
+    <input type="text" id="index" name="index" value="">
+    <input type="submit" value="Delete index number">
+</form>
+</p>
+<br><br>
+<p style="text-align: center">  <h2 style="align-self: center">Book apartments</h2>
+    <form action="{{ '/RemoveApar' }}" method="post" style="text-align: center">
+        <label>Apartment ID:</label>
+        <input type="text" id="index" name="index" value="">
+        <label>Week Number:</label>
+        <input type="text" id="week" name="week" value="">
+        <input type="submit" value="Book">
+    </form>
+    </p>
+<br><br>
+<p>
+    <h2> apartment orders table</h2>
+   <!-- <img src="{{url_for('static', filename = 'images/ordersBarChart.png')}}"> -->
+</p>
+
+</body>
+</html>

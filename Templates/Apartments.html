@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SprintTR</title>
+    <style>
+       table, th, td {
+           border: 1px solid black;
+           }
+        table.center {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="align-self: center">France Vacancies Available Apartments</h1>
+
+<!-- <img src="images/averageDirection.png">
+<img src="{{url_for('static', filename = 'images/averageDirection.png')}}"> -->
+
+<table class="center">
+    <thead><tr><th>ID</th><th>Name</th><th>Address</th><th>Cty</th><th>Description</th><th>Room Number</th><th>Size</th><th>Week Price</th></tr></thead>
+    <tbody>
+        {% for apar in apars%}
+           <tr>
+               <td>{{apar.Id}}</td>
+               <td style="text-align: center;">{{apar.Name}}</td>
+               <td style="text-align: center;">{{apar.Address}}</td>
+               <td style="text-align: center;">{{apar.City}}</td>
+               <td style="text-align: center;">{{apar.Description}}</td>
+               <td style="text-align: center;">{{apar.RoomNumber}}</td>
+               <td style="text-align: center;">{{apar.Size}}</td>
+               <td style="text-align: center;">{{apar.WeekPrice}}</td>
+           </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<p style="align-self: center; background-color: rgb(235, 8, 8)"> <h2 style="align-self: center">Add apartment</h2>
+<form action="{{ '/AddApar' }}" method="post" style="text-align: center">
+    <label>Apartment Name:</label>
+    <input type="text" id="name" name="name" value="">
+    <label>Apartment Address:</label>
+    <input type="text" id="address" name="address" value="">
+    <label>City:</label>
+    <input type="text" id="city" name="city" value="">
+    <label>Description:</label>
+    <input type="text" id="desc" name="desc" value=""><br><br>
+    <label>Room Number:</label>
+    <input type="text" id="room" name="room" value="">
+    <label>Size:</label>
+    <input type="text" id="size" name="size" value="">
+    <label>Weekly Price:</label>
+    <input type="text" id="price" name="price" value="">
+    <input type="submit" value="Add Apartment">
+</form>
+<br><br>
+</p>
+<p style="text-align: center">  <h2 style="align-self: center">Remove apartments</h2>
+<form action="{{ '/RemoveApar' }}" method="post" style="text-align: center">
+        <label>Apartment ID:</label>
+    <input type="text" id="index" name="index" value="">
+    <input type="submit" value="Delete index number">
+</form>
+</p>
+<br><br>
+<p style="text-align: center">  <h2 style="align-self: center">Book apartments</h2>
+    <form action="{{ '/RemoveApar' }}" method="post" style="text-align: center">
+        <label>Apartment ID:</label>
+        <input type="text" id="index" name="index" value="">
+        <label>Week Number:</label>
+        <input type="text" id="week" name="week" value="">
+        <input type="submit" value="Book">
+    </form>
+    </p>
+<br><br>
+<p>
+    <h2> apartment orders table</h2>
+   <!-- <img src="{{url_for('static', filename = 'images/ordersBarChart.png')}}"> -->
+</p>
+
+</body>
+</html>
